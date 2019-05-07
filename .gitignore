@@ -1,3 +1,6 @@
 .gradle
 /bin/
 HELP.md
+.settings/org.eclipse.buildship.core.prefs
+.classpath
+.project
