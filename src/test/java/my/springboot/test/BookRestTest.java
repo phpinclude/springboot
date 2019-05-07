@@ -22,30 +22,30 @@ import my.springboot.service.BookRestService;
 @RestClientTest(BookRestService.class)
 public class BookRestTest {
 	
-//	@Rule
-//	public ExpectedException thrown = ExpectedException.none();
-//	
-//	@Autowired
-//	private BookRestService bookRestService;
-//	
-//	@Autowired
-//	private MockRestServiceServer server;
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
 	
-//	@Test
-//	public void restTest() {
-//		this.server.expect(MockRestRequestMatchers.requestTo("/rest/test"))
-//			.andRespond(MockRestResponseCreators.withSuccess(new ClassPathResource("/test.json",getClass()), MediaType.APPLICATION_JSON));
-//		Book book = this.bookRestService.getRestBook();
-//		System.out.println(book);
-//		
-//		Assertions.assertThat(book.getTitle()).isEqualTo("테스트");
-//	}
-//	
-//	@Test
-//	public void restErrorTest() {
-//		this.server.expect(MockRestRequestMatchers.requestTo("/rest/test")).andRespond(MockRestResponseCreators.withServerError());
-//		this.thrown.expect(HttpServerErrorException.class);
-//		this.bookRestService.getRestBook();
-//	}
+	@Autowired
+	private BookRestService bookRestService;
+	
+	@Autowired
+	private MockRestServiceServer server;
+	
+	@Test
+	public void restTest() {
+		this.server.expect(MockRestRequestMatchers.requestTo("/rest/test"))
+			.andRespond(MockRestResponseCreators.withSuccess(new ClassPathResource("/test.json",getClass()), MediaType.APPLICATION_JSON));
+		Book book = this.bookRestService.getRestBook();
+		System.out.println(book);
+		
+		Assertions.assertThat(book.getTitle()).isEqualTo("테스트");
+	}
+	
+	@Test
+	public void restErrorTest() {
+		this.server.expect(MockRestRequestMatchers.requestTo("/rest/test")).andRespond(MockRestResponseCreators.withServerError());
+		this.thrown.expect(HttpServerErrorException.class);
+		this.bookRestService.getRestBook();
+	}
 	
 }

@@ -16,20 +16,20 @@ import my.springboot.domain.Book;
 @JsonTest
 public class BookJsonTest {
 	
-//	@Autowired
-//	private JacksonTester<Book> json;
+	@Autowired
+	private JacksonTester<Book> json;
 	
-//	@Test
-//	public void jsonTest() throws IOException {
-//		Book book = Book.builder().title("테스트").build();
-//		
-//		String content = "{\"title\":\"테스트\"}";
-//		
-//		Assertions.assertThat(this.json.parseObject(content).getTitle()).isEqualTo(book.getTitle());
-//		
-//		Assertions.assertThat(this.json.parseObject(content).getPublishedAt()).isNull();
-//		Assertions.assertThat(this.json.write(book)).isEqualToJson("/test.json");
-//		Assertions.assertThat(this.json.write(book)).hasJsonPathStringValue("title");
-//		Assertions.assertThat(this.json.write(book)).extractingJsonPathStringValue("title").isEqualTo("테스트");
-//	}
+	@Test
+	public void jsonTest() throws IOException {
+		Book book = Book.builder().title("테스트").build();
+		
+		String content = "{\"title\":\"테스트\"}";
+		
+		Assertions.assertThat(this.json.parseObject(content).getTitle()).isEqualTo(book.getTitle());
+		
+		Assertions.assertThat(this.json.parseObject(content).getPublishedAt()).isNull();
+		Assertions.assertThat(this.json.write(book)).isEqualToJson("/test.json");
+		Assertions.assertThat(this.json.write(book)).hasJsonPathStringValue("title");
+		Assertions.assertThat(this.json.write(book)).extractingJsonPathStringValue("title").isEqualTo("테스트");
+	}
 }

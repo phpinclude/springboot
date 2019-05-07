@@ -22,31 +22,31 @@ import my.springboot.service.BookService;
 @RunWith(SpringRunner.class)
 @WebMvcTest
 public class BookContollerTest {
-//    @Autowired
-//    private MockMvc mvc;
-//    
-//    @MockBean
-//    private BookService bookService;
+    @Autowired
+    private MockMvc mvc;
     
-//    @Test
-//    public void Book_MVC_test() throws Exception{
-//        Book book = new Book("Spring boot 책", LocalDateTime.now());
-//        
-//        BDDMockito.given(bookService.getBookList()).willReturn(Collections.singletonList(book));
-//        
-//        mvc.perform(MockMvcRequestBuilders.get("/books"))
-//            .andExpect(MockMvcResultMatchers.status().isOk())
-//            .andExpect(MockMvcResultMatchers.view().name("book"))
-//            .andExpect(MockMvcResultMatchers.model().attributeExists("bookList"))
-//            .andExpect(MockMvcResultMatchers.model().attribute("bookList", Matchers.contains(book)));
-//        
-//        
-//        
-//    }
-//    
-//    @Test
-//    public void Book_MVC_test2() throws Exception{
-//        mvc.perform(MockMvcRequestBuilders.get("/test"))
-//        .andExpect(MockMvcResultMatchers.status().isOk());
-//    }
+    @MockBean
+    private BookService bookService;
+    
+    @Test
+    public void Book_MVC_test() throws Exception{
+        Book book = new Book("Spring boot 책", LocalDateTime.now());
+        
+        BDDMockito.given(bookService.getBookList()).willReturn(Collections.singletonList(book));
+        
+        mvc.perform(MockMvcRequestBuilders.get("/books"))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.view().name("book"))
+            .andExpect(MockMvcResultMatchers.model().attributeExists("bookList"))
+            .andExpect(MockMvcResultMatchers.model().attribute("bookList", Matchers.contains(book)));
+        
+        
+        
+    }
+    
+    @Test
+    public void Book_MVC_test2() throws Exception{
+        mvc.perform(MockMvcRequestBuilders.get("/test"))
+        .andExpect(MockMvcResultMatchers.status().isOk());
+    }
 }
