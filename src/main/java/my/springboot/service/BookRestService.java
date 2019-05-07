@@ -9,10 +9,8 @@ import my.springboot.domain.Book;
 @Service
 public class BookRestService {
 	
-	private RestTemplate restTemplate;
-	
-	public BookRestService() {
-	}
+	private final RestTemplate restTemplate;
+
 	
 	public BookRestService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.rootUri("/rest/test").build();
