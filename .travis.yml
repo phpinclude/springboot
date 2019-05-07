@@ -10,7 +10,8 @@ sudo: required
 
 before_install:
 - chmod +x gradlew
- 
+- export JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8"
+
 # Travis CI 서버의 Cache 활성화
 cache:
   directories:
