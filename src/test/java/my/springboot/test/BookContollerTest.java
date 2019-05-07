@@ -39,9 +39,6 @@ public class BookContollerTest {
             .andExpect(MockMvcResultMatchers.view().name("book"))
             .andExpect(MockMvcResultMatchers.model().attributeExists("bookList"))
             .andExpect(MockMvcResultMatchers.model().attribute("bookList", Matchers.contains(book)));
-        
-        
-        
     }
     
     @Test
