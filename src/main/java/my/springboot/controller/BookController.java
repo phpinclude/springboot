@@ -18,8 +18,4 @@ public class BookController {
         model.addAttribute("bookList",bookService.getBookList());
         return "book";
     }
-    
-    public BookController() {
-        System.out.println("BookController Constructor call");
-    }
 }
