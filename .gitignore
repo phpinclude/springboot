@@ -1,7 +1,8 @@
-.gradle
-/bin/
 HELP.md
+.travis.yml
+.gradle
 .settings/org.eclipse.buildship.core.prefs
 .classpath
 .project
 /build/
+/bin/
